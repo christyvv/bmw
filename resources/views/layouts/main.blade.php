@@ -23,18 +23,12 @@
       Tip 2: you can also add an image using data-image tag
   -->
       <div class="logo">
-        <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+        <a href="#" class="simple-text logo-normal">
           <strong>Bina Mitra Wahana</strong>
         </a>
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item {{ Route::is('home') ? 'active' : '' }}">
-            <a class="nav-link" href="{{ route('home') }}">
-              <i class="material-icons">dashboard</i>
-              <p>Dashboard</p>
-            </a>
-          </li>
           <li class="nav-item {{ Route::is('galeri') ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('galeri') }}">
                 <i class="material-icons">image</i>
@@ -90,7 +84,7 @@
           <nav class="float-right">
             <ul>
               <li>
-                <a href="https://www.creative-tim.com">
+                <a href="#">
                   Bina Mitra Wahana
                 </a>
               </li>

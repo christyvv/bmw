@@ -19,9 +19,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-// HOME
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 // GALERI
 Route::get('/galeri', [App\Http\Controllers\GaleriController::class, 'index'])->name('galeri');
 Route::get('/galeri/tambah', [App\Http\Controllers\GaleriController::class, 'create'])->name('galeri.tambah');
@@ -53,3 +50,5 @@ Route::post('/kontak/tambah/store', [App\Http\Controllers\KontakController::clas
 Route::get('/kontak/edit/{id}', [App\Http\Controllers\KontakController::class, 'edit'])->name('kontak.edit');
 Route::post('/kontak/edit/update/{id}', [App\Http\Controllers\KontakController::class, 'update'])->name('kontak.edit.update');
 Route::get('/kontak/destroy/{id}', [App\Http\Controllers\KontakController::class, 'destroy'])->name('kontak.destroy');
+
+Route::get('/website', [App\Http\Controllers\WebsiteController::class, 'index'])->name('website');

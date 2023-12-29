@@ -42,8 +42,8 @@ class GaleriController extends Controller
     {
         $foto=$request->file('foto');
         $foto->storeAs('public/admin', $foto->hashName());
-        // $video=$request->file('video');
-        // $videoPath=$video->storeAs('public/admin', $video->hashName());
+        $video=$request->file('video');
+        $video->storeAs('public/admin', $video->hashName());
         $galeri=Galeri::create([
             'tanggal' => $request->tanggal,
             'judul' => $request->judul,
@@ -97,8 +97,8 @@ class GaleriController extends Controller
     {
         $foto=$request->file('foto');
         $foto->storeAs('public/admin', $foto->hashName());
-        // $video=$request->file('video');
-        // $videoPath=$video->storeAs('public/admin', $video->hashName());
+        $video=$request->file('video');
+        $video->storeAs('public/admin', $video->hashName());
         $galeri = Galeri::find($id);
         $galeri->update([
             'tanggal' => $request->tanggal,
