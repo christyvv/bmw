@@ -13,7 +13,6 @@ class WebsiteController extends Controller
     public function index()
     {
         $data = array(
-            'title' => 'Fasilitas',
             'fasilitas' => Fasilitas::all(),
             'berita' => Berita::all(),
             'galeri' => Galeri::all(),

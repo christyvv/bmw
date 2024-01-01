@@ -38,7 +38,7 @@
                         <td>
                             <video width="150" height="auto" controls>
                                 <source src="{{ Storage::url('public/admin/' . $g->video) }}" type="video/mp4">
-                                Your browser does not support the video tag.
+                               
                             </video>
                         </td>
                         <td>

@@ -652,12 +652,12 @@ h6 {
 # About Section
 --------------------------------------------------------------*/
 #about {
-  background: url("../img/about-bg.jpg");
+  background: url("../img/sma-bina-mitra-wahana.jpeg");
   background-size: cover;
   overflow: hidden;
   position: relative;
   color: #fff;
-  padding: 60px 0 40px 0;
+  padding: 60px 0 60px 0;
 }
 
 @media (min-width: 1024px) {
@@ -668,7 +668,7 @@ h6 {
 
 #about:before {
   content: "";
-  background: rgba(13, 20, 41, 0.8);
+  background: rgba(39, 43, 53, 0.8);
   position: absolute;
   bottom: 0;
   top: 0;
@@ -680,20 +680,15 @@ h6 {
   font-size: 36px;
   font-weight: bold;
   margin-bottom: 10px;
-  color: #fff;
-}
-
-#about h3 {
-  font-size: 18px;
-  font-weight: bold;
-  text-transform: uppercase;
-  margin-bottom: 10px;
+  margin-left: 10px;
   color: #fff;
 }
 
 #about p {
   font-size: 14px;
   margin-bottom: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
   color: #fff;
 }
 
@@ -707,14 +702,14 @@ h6 {
 #speakers .speaker {
   position: relative;
   overflow: hidden;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 #speakers .speaker .details {
   background: rgba(6, 12, 34, 0.76);
   position: absolute;
   left: 0;
-  bottom: -40px;
+  bottom: -100px;
   right: 0;
   text-align: center;
   padding-top: 10px;
@@ -723,15 +718,17 @@ h6 {
 
 #speakers .speaker .details h3 {
   color: #fff;
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 600;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 #speakers .speaker .details p {
   color: #fff;
-  font-size: 15px;
+  font-size: 12px;
   margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
   font-style: italic;
 }
 
@@ -939,7 +936,7 @@ h6 {
 }
 
 #venue .venue-info {
-  background: url("../img/venue-info-bg.jpg") top center no-repeat;
+  background: url("../img/sma-bina-mitra-wahana.jpeg") top center no-repeat;
   background-size: cover;
   position: relative;
   padding-top: 60px;
@@ -948,7 +945,7 @@ h6 {
 
 #venue .venue-info:before {
   content: "";
-  background: rgba(13, 20, 41, 0.8);
+  background: rgba(39, 43, 53, 0.8);
   position: absolute;
   bottom: 0;
   top: 0;
@@ -1019,7 +1016,7 @@ h6 {
 
 #hotels h3 {
   font-weight: 600;
-  font-size: 20px;
+  font-size: 16px;
   margin-bottom: 5px;
   padding: 0 20px;
 }
@@ -1042,16 +1039,43 @@ h6 {
 }
 
 #hotels p {
-  padding: 0 20px;
-  margin-bottom: 20px;
-  color: #060c22;
-  font-style: italic;
-  font-size: 15px;
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+    color: #9195a2;
+}
+
+#hotels .hotel p{
+    color: #112363;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 12px;
 }
 
 /*--------------------------------------------------------------
 # Gallery Section
 --------------------------------------------------------------*/
+/* @media only screen and (max-width: 1140px){
+    .custom-padding {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+}
+
+@media only screen and (max-width: 1920px){
+    .gallery {
+        padding-bottom: 100px;
+    }
+
+    .gallery {
+        background-color: #25282b;
+        width: auto;
+    }
+} */
+
+
 #gallery {
   padding: 60px;
   overflow: hidden;
@@ -1074,8 +1098,32 @@ h6 {
   background-color: #f82249;
 }
 
+#gallery .swiper-slide {
+    text-align: center;
+    font-size: 12px;
+    color: #152b79;
+  }
+
 #gallery .swiper-slide-active {
   text-align: center;
+  font-size: 12px;
+  color: #152b79;
+  font-weight: 550;
+}
+
+#gallery .swiper-slide p {
+    text-align: center;
+    font-size: 8px;
+    color: #152b79;
+    margin-bottom: 0;
+  }
+
+#gallery .swiper-slide-active p {
+  text-align: center;
+  font-size: 8px;
+  color: #152b79;
+  font-weight: 500;
+  margin-bottom: 0;
 }
 
 @media (min-width: 992px) {
@@ -1084,7 +1132,8 @@ h6 {
   }
 
   #gallery .swiper-slide-active {
-    border: 5px solid #f82249;
+    border: 1px solid #ccd0e1;
+    border-radius: 5px;
     padding: 4px;
     background: #fff;
     z-index: 1;

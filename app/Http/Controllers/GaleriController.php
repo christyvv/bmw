@@ -40,16 +40,23 @@ class GaleriController extends Controller
      */
     public function store(Request $request)
     {
-        $foto=$request->file('foto');
-        $foto->storeAs('public/admin', $foto->hashName());
-        $video=$request->file('video');
-        $video->storeAs('public/admin', $video->hashName());
+        $fotoPath = $request->file('foto')->store('public/admin');
+        // $foto=$request->file('foto');
+        // $foto->storeAs('public/admin', $foto->hashName());
+
+        $videoPath = $request->file('video')->store('public/admin');
+        // $video=$request->file('video');
+        // $video->storeAs('public/admin', $video->hashName());
+
+        $fotoName = basename($fotoPath);
+        $videoName = basename($videoPath);
+
         $galeri=Galeri::create([
             'tanggal' => $request->tanggal,
             'judul' => $request->judul,
             'caption' => $request->caption,
-            'foto' => $request->hashName(),
-            'video' => $request->hashName(),
+            'foto' => $fotoName,
+            'video' => $videoName,
         ]);
         if($galeri){
             return redirect('/galeri')->with(['success'=>'Data Berhasil Disimpan!']);
