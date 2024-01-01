@@ -31,14 +31,13 @@
                         <td class="text-center">{{ $no++ }}</td>
                         <td style="width: 10%; overflow:hidden; text-overflow:ellipsis;">{{ $g->tanggal }}</td>
                         <td style="width: 20%; overflow:hidden; text-overflow:ellipsis;">{{ $g->judul }}</td>
-                        <td style="width: 40%; overflow:hidden; text-overflow:ellipsis;">{{ $g->caption }}</td>
-                        <td><img src="{{ Storage::url('public/admin/' . $g->foto) }}" style="width:150px"
+                        <td style="width: 30%; overflow:hidden; text-overflow:ellipsis;">{{ $g->caption }}</td>
+                        <td style="width: 30%"><img src="{{ Storage::url('public/admin/' . $g->foto) }}" style="width:150px"
                                 class="img-thumbnail">
                         </td>
                         <td>
                             <video width="150" height="auto" controls>
                                 <source src="{{ Storage::url('public/admin/' . $g->video) }}" type="video/mp4">
-                               
                             </video>
                         </td>
                         <td>

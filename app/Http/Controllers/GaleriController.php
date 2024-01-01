@@ -102,17 +102,17 @@ class GaleriController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $foto=$request->file('foto');
-        $foto->storeAs('public/admin', $foto->hashName());
-        $video=$request->file('video');
-        $video->storeAs('public/admin', $video->hashName());
+        $fotoPath = $request->file('foto')->store('public/admin');
+        $videoPath = $request->file('video')->store('public/admin');
+        $fotoName = basename($fotoPath);
+        $videoName = basename($videoPath);
         $galeri = Galeri::find($id);
         $galeri->update([
             'tanggal' => $request->tanggal,
             'judul' => $request->judul,
             'caption' => $request->caption,
-            'foto' => $request->hashName(),
-            'video' => $request->hashName(),
+            'foto' => $fotoName,
+            'video' => $videoName,
         ]);
         if($galeri){
             return redirect('/galeri')->with(['success'=>'Data Berhasil Diubah!']);
