@@ -52,3 +52,5 @@ Route::post('/kontak/edit/update/{id}', [App\Http\Controllers\KontakController::
 Route::get('/kontak/destroy/{id}', [App\Http\Controllers\KontakController::class, 'destroy'])->name('kontak.destroy');
 
 Route::get('/website', [App\Http\Controllers\WebsiteController::class, 'index'])->name('website');
+
+Route::get('/gallery', [App\Http\Controllers\GalleryController::class, 'index'])->name('gallery');

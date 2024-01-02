@@ -93,9 +93,10 @@
                 <div class="row">
                     @foreach ($fasilitas as $f)
                         <div class="col-lg-4 col-md-6 d-flex">
-                            <div class="speaker" data-aos="fade-up" data-aos-delay="100">
+                            <div class="speaker " data-aos="fade-up" data-aos-delay="100">
+                                <a href="{{ Storage::url('public/admin/' . $f->foto) }}" class="gallery-lightbox">
                                 <img src="{{ Storage::url('public/admin/' . $f->foto) }}" alt=""
-                                    class="img-fluid rounded">
+                                    class="img-fluid rounded"></a>
                                 <div class="details">
                                     <h3 class=""><a href="">{{ $f->judul }}</a></h3>
                                     <div class="social">
@@ -176,7 +177,7 @@
                 <div class="swiper-wrapper align-items-center">
                     @foreach ($galeri as $g)
                         <div class="swiper-slide">
-                            <a href="#" class="gallery-lightbox">
+                            <a href="{{ Storage::url('public/admin/' . $g->foto) }}" class="gallery-lightbox">
                                 <img src="{{ Storage::url('public/admin/' . $g->foto) }}" class="img-fluid"
                                     alt=""></a>
                             {{ $g->judul }}
@@ -185,22 +186,21 @@
                     @endforeach
                 </div>
                 <div class="swiper-pagination"></div>
+                <div class="gallery-slider swiper">
+                    <h5 class="text-center">Videos</h5>
+                    <div class="swiper-wrapper align-items-center">
+                        @foreach ($galeri as $g)
+                            <div class="swiper-slide">
+                                    <a href="{{ Storage::url('public/admin/' . $g->video) }}" class="gallery-lightbox">
+                                        <video width="100%" height="auto" controls>
+                                            <source src="{{ Storage::url('public/admin/' . $g->video) }}" type="video/mp4">
+                                        </video></a>
 
-                {{-- <h5 class="text-center">Videos</h5>
-                <div class="swiper-wrapper align-items-center">
-                    @foreach ($galeri as $g)
-                        <div class="swiper-slide">
-                            <a href="#" class="gallery-lightbox">
-                                <video width="200" height="auto" controls>
-                                    <source src="{{ Storage::url('public/admin/' . $g->video) }}" type="video/mp4">
-                                </video></a>
-                            {{ $g->judul }}
-                            <p>{{ $g->tanggal }}</p>
-                        </div>
-                    @endforeach
-                </div> --}}
-
-                {{-- <div class="swiper-pagination"></div> --}}
+                                {{ $g->judul }}
+                                <p>{{ $g->caption }}</p>
+                            </div>
+                        @endforeach
+                    </div>
             </div>
         </section><!-- End Gallery Section -->
 
