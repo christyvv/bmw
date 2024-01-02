@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <!-- Material Kit CSS -->
   <link href="{{ url('admin/assets/css/material-dashboard.css') }}" rel="stylesheet" />
+  
 </head>
 
 <body class="light-edition">
@@ -38,7 +39,7 @@
             </li>
             <li class="nav-item {{ Route::is('prestasi') ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('prestasi') }}">
-                <i class="material-icons">star</i>
+                <i class="material-icons">emoji_events</i>
                 <p style="font-size: 12px">Prestasi</p>
               </a>
             </li>

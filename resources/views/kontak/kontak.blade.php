@@ -10,8 +10,8 @@
     <div class="container-fluid">
         <h3 style="font-family: poppins; font-weight:400; font-size:20px"><strong>Halaman Kontak</strong></h3>
         <a href="{{ route('kontak.tambah') }}"><button type="submit" class="btn btn-primary mb-3 mt-0" style="font-family: poppins; font-weight:500;"><i class="fa fa-plus"></i> Tambah</button></a>
-        <table class="table table-striped table-bordered">
-            <thead class="thead-dark" >
+        <table class="table table-success table-striped table-bordered">
+            <thead class="" >
                 <tr class="text-center" style="font-family: poppins">
                     <th style="font-size: 14px" scope="col">No</th>
                     <th style="font-size: 14px" scope="col">Email</th>
@@ -33,13 +33,14 @@
                         <td>{{ $k->instagram }}</td>
                         <td>{{ $k->facebook }}</td>
                         <td>{{ $k->alamat }}</td>
-                        <td class="text-center">
-                            <a href="/kontak/edit/{{ $k->id }}" class="btn btn-warning" data-bs-toggle="modal">
-                                <i class="material-icons">edit</i>
+                        <td class="text-center ">
+                            <p class="d-inline-flex gap-1">
+                            <a href="/kontak/edit/{{ $k->id }}" class="btn btn-outline-warning btn-sm" data-bs-toggle="modal">
+                                edit
                             </a>
-                            <a href="/kontak/destroy/{{ $k->id }}" class="btn btn-danger" data-bs-toggle="modal">
-                                <i class="material-icons">delete</i>
-                            </a>
+                            <a href="/kontak/destroy/{{ $k->id }}" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal">
+                                delete
+                            </a></p>
                         </td>
                     </tr>
                 @endforeach

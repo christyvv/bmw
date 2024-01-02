@@ -96,7 +96,7 @@
                 <div class="row" data-aos="fade-up" data-aos-delay="100">
                     @foreach ($berita as $b)
                         <div class="col-lg-4 col-md-6 ">
-                            <div class="hotel rounded">
+                            <div class="hotel ">
                                 <div class="hotel-img rounded">
                                     <img src="{{ Storage::url('public/admin/' . $b->foto) }}" alt=""
                                         class="img-fluid">
@@ -120,30 +120,38 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title text-muted text-uppercase text-center">Premium Access</h5>
-                                <h6 class="card-price text-center">$350</h6>
-                                <hr>
-                                <ul class="fa-ul">
-                                    <li><span class="fa-li"><i class="fa fa-check"></i></span>Regular Seating</li>
-                                    <li><span class="fa-li"><i class="fa fa-check"></i></span>Coffee Break</li>
-                                    <li><span class="fa-li"><i class="fa fa-check"></i></span>Custom Badge</li>
-                                    <li><span class="fa-li"><i class="fa fa-check"></i></span>Community Access</li>
-                                    <li><span class="fa-li"><i class="fa fa-check"></i></span>Workshop Access</li>
-                                    <li><span class="fa-li"><i class="fa fa-check"></i></span>After Party</li>
-                                </ul>
-                                <hr>
-                                <div class="text-center">
-                                    <button type="button" class="btn" data-bs-toggle="modal"
-                                        data-bs-target="#buy-ticket-modal" data-ticket-type="premium-access">Buy
-                                        Now</button>
-                                </div>
+                    @foreach ($prestasi as $p)
+                        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                            <div class="card mb-5 mb-lg-0">
+                                <div class="card-body">
+                                    <h5 class="card-title text-warning text-uppercase text-center">{{ $p->nama }}
+                                    </h5>
+                                    <h6 class="card-price text-center">{{ $p->prestasi }}</h6>
+                                    <p class="card-date text-center"><i class="bi bi-calendar-event-fill">
+                                            {{ $p->tanggal }}</i></p>
+                                    <hr>
+                                    <div>
+                                        <div class="row g-0">
+                                            <div class="col-md-4" style="margin: auto">
+                                                <img src="{{ Storage::url('public/admin/' . $p->foto) }}"
+                                                    alt="" class="img-fluid rounded-start">
+                                            </div>
+                                            <div class="col-md-8" style="margin: auto">
+                                                <p class="card-desc">{{ $p->deskripsi }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="text-center mb-2">
+                                        <button type="button" class="btn" data-bs-toggle="modal"
+                                            data-bs-target="#buy-ticket-modal" data-ticket-type="premium-access">See
+                                            More</button>
+                                    </div>
 
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    @endforeach
                 </div>
 
             </div>
@@ -153,7 +161,7 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title">Buy Tickets</h4>
+                            <h4 class="modal-title">Prestasi</h4>
                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                 aria-label="Close"></button>
                         </div>
@@ -162,18 +170,6 @@
                                 <div class="form-group">
                                     <input type="text" class="form-control" name="your-name"
                                         placeholder="Your Name">
-                                </div>
-                                <div class="form-group mt-3">
-                                    <input type="text" class="form-control" name="your-email"
-                                        placeholder="Your Email">
-                                </div>
-                                <div class="form-group mt-3">
-                                    <select id="ticket-type" name="ticket-type" class="form-select">
-                                        <option value="">-- Select Your Ticket Type --</option>
-                                        <option value="standard-access">Standard Access</option>
-                                        <option value="pro-access">Pro Access</option>
-                                        <option value="premium-access">Premium Access</option>
-                                    </select>
                                 </div>
                                 <div class="text-center mt-3">
                                     <button type="submit" class="btn">Buy Now</button>
@@ -222,11 +218,11 @@
                     <p>Check our gallery from the recent events</p>
                 </div>
             </div>
-            <div class="gallery-slider swiper">
+            <div class="gallery-slider swiper " data-aos="fade-up" data-aos-delay="100">
                 <h5 class="text-center mb-0">Photos</h5>
                 <div class="swiper-wrapper align-items-center">
                     @foreach ($galeri as $g)
-                        <div class="swiper-slide">
+                        <div class="swiper-slide" >
                             <a href="{{ Storage::url('public/admin/' . $g->foto) }}" class="gallery-lightbox">
                                 <img src="{{ Storage::url('public/admin/' . $g->foto) }}" class="img-fluid rounded"
                                     alt=""></a>
@@ -321,9 +317,12 @@
                                                 : {{ $k->notelp }}</a><br>
                                             <i class="bi bi-envelope"></i><a href="mailto:{{ $k->email }}">
                                                 : {{ $k->email }}</a><br>
-                                            <i class="bi bi-facebook"></i><a href="https://www.facebook.com/{{ $k->facebook }}/" target="_blank">
+                                            <i class="bi bi-facebook"></i><a
+                                                href="https://www.facebook.com/{{ $k->facebook }}/" target="_blank">
                                                 : {{ $k->facebook }}</a><br>
-                                            <i class="bi bi-instagram"></i><a href="https://www.instagram.com/{{ $k->instagram }}/" target="_blank">
+                                            <i class="bi bi-instagram"></i><a
+                                                href="https://www.instagram.com/{{ $k->instagram }}/"
+                                                target="_blank">
                                                 : {{ $k->instagram }}</a><br>
                                         </p>
                                     @endforeach
