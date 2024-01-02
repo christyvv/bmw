@@ -6,10 +6,10 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header card-header-primary">
-                        <h4 class="card-title p-2 ml-1"><strong>Tambah Berita</strong></h4>
+                        <h4 class="card-title p-1 ml-1" style="font-family: poppins; font-size:16px; font-weight:500"><strong>Tambah Berita</strong></h4>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('berita.tambah.store') }}" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('berita.tambah.store') }}" enctype="multipart/form-data" style="font-family: poppins">
                             @csrf
 
                             <div class="row">

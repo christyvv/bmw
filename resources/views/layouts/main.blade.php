@@ -16,41 +16,48 @@
 
 <body class="light-edition">
   <div class="wrapper">
-    <div class="sidebar" data-color="purple" data-background-color="black" data-image="./assets/img/bmw.jpg">
+    <div class="sidebar" data-color="purple" data-background-color="black" data-image="./assets/img/bmw.jpg" >
       <!--
       Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
       Tip 2: you can also add an image using data-image tag
   -->
       <div class="logo">
-        <a href="{{ route('website') }}" class="simple-text logo-normal">
-          <strong>Bina Mitra Wahana</strong>
+        <a href="{{ route('website') }}" class="simple-text logo-normal" ><img
+            src="{{ url('web/assets/img/bmw.png') }}" style="width: 8%; margin-right:10px">
+          <strong style="font-size: 14px">Bina Mitra Wahana</strong>
         </a>
       </div>
       <div class="sidebar-wrapper">
-        <ul class="nav">
-          <li class="nav-item {{ Route::is('galeri') ? 'active' : '' }}">
-            <a class="nav-link" href="{{ route('galeri') }}">
-                <i class="material-icons">image</i>
-              <p>Galeri</p>
-            </a>
-          </li>
-          <li class="nav-item {{ Route::is('berita') ? 'active' : '' }}">
-            <a class="nav-link" href="{{ route('berita') }}">
-              <i class="material-icons">newspaper</i>
-              <p>Berita</p>
-            </a>
-          </li>
-          <li class="nav-item {{ Route::is('fasilitas') ? 'active' : '' }}">
-          <a class="nav-link" href="{{ route('fasilitas') }}">
-              <i class="material-icons">house</i>
-              <p>Fasilitas</p>
-            </a>
-          </li>
+        <ul class="nav" style="font-family: poppins">
+            <li class="nav-item {{ Route::is('berita') ? 'active' : '' }}">
+              <a class="nav-link" href="{{ route('berita') }}">
+                <i class="material-icons">newspaper</i>
+                <p style="font-size: 12px">Berita</p>
+              </a>
+            </li>
+            <li class="nav-item {{ Route::is('prestasi') ? 'active' : '' }}">
+            <a class="nav-link" href="{{ route('prestasi') }}">
+                <i class="material-icons">star</i>
+                <p style="font-size: 12px">Prestasi</p>
+              </a>
+            </li>
+            <li class="nav-item {{ Route::is('fasilitas') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('fasilitas') }}">
+                    <i class="material-icons">house</i>
+                    <p style="font-size: 12px">Fasilitas</p>
+                </a>
+            </li>
+            <li class="nav-item {{ Route::is('galeri') ? 'active' : '' }}">
+              <a class="nav-link" href="{{ route('galeri') }}">
+                  <i class="material-icons">image</i>
+                <p style="font-size: 12px">Galeri</p>
+              </a>
+            </li>
           <li class="nav-item {{ Route::is('kontak') ? 'active' : '' }}">
           <a class="nav-link" href="{{ route('kontak') }}">
               <i class="material-icons">phone</i>
-              <p>Kontak</p>
+              <p style="font-size: 12px">Kontak</p>
             </a>
           </li>
           <!-- your sidebar here -->
@@ -59,17 +66,12 @@
     </div>
     <div class="main-panel">
       <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+      <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="#">Bina Mitra Wahana (Admin)</a>
+            <i class="material-icons" style="margin-left: 15px">face</i>
+            <a class="navbar-brand" style="font-family: poppins; font-size: 14px; font-weight:500; margin-left:7px" href="{{ route('berita') }}">Bina Mitra Wahana (Admin)</a>
           </div>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="navbar-toggler-icon icon-bar"></span>
-            <span class="navbar-toggler-icon icon-bar"></span>
-            <span class="navbar-toggler-icon icon-bar"></span>
-          </button>
 
         </div>
       </nav>
@@ -84,7 +86,8 @@
           <nav class="float-right">
             <ul>
               <li>
-                <a href="#">
+                  <a href="{{ route('berita') }}">
+                    <i class="material-icons">school</i>
                   Bina Mitra Wahana
                 </a>
               </li>

@@ -6,10 +6,10 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header card-header-primary">
-                        <h4 class="card-title p-2 ml-1"><strong>Edit Berita</strong></h4>
+                        <h4 class="card-title p-1 ml-1" style="font-family: poppins; font-size:16px; font-weight:500"><strong>Edit Berita</strong></h4>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="/berita/edit/update/{{ $berita->id }}" enctype="multipart/form-data">
+                        <form method="POST" action="/berita/edit/update/{{ $berita->id }}" enctype="multipart/form-data" style="font-family: poppins">
                             @csrf
 
                             <div class="row">

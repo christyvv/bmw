@@ -51,6 +51,12 @@ Route::get('/kontak/edit/{id}', [App\Http\Controllers\KontakController::class, '
 Route::post('/kontak/edit/update/{id}', [App\Http\Controllers\KontakController::class, 'update'])->name('kontak.edit.update');
 Route::get('/kontak/destroy/{id}', [App\Http\Controllers\KontakController::class, 'destroy'])->name('kontak.destroy');
 
-Route::get('/website', [App\Http\Controllers\WebsiteController::class, 'index'])->name('website');
+// PRESTASI
+Route::get('/prestasi', [App\Http\Controllers\PrestasiController::class, 'index'])->name('prestasi');
+Route::get('/prestasi/tambah', [App\Http\Controllers\PrestasiController::class, 'create'])->name('prestasi.tambah');
+Route::post('/prestasi/tambah/store', [App\Http\Controllers\PrestasiController::class, 'store'])->name('prestasi.tambah.store');
+Route::get('/prestasi/edit/{id}', [App\Http\Controllers\PrestasiController::class, 'edit'])->name('prestasi.edit');
+Route::post('/prestasi/edit/update/{id}', [App\Http\Controllers\PrestasiController::class, 'update'])->name('prestasi.edit.update');
+Route::get('/prestasi/destroy/{id}', [App\Http\Controllers\PrestasiController::class, 'destroy'])->name('prestasi.destroy');
 
-Route::get('/gallery', [App\Http\Controllers\GalleryController::class, 'index'])->name('gallery');
+Route::get('/website', [App\Http\Controllers\WebsiteController::class, 'index'])->name('website');

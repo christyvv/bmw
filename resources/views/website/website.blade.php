@@ -43,8 +43,9 @@
                 <ul>
                     <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
                     <li><a class="nav-link scrollto" href="#about">About</a></li>
-                    <li><a class="nav-link scrollto" href="#speakers">Facilities</a></li>
                     <li><a class="nav-link scrollto" href="#hotels">News</a></li>
+                    <li><a class="nav-link scrollto" href="#buy-tickets">Prestasi</a></li>
+                    <li><a class="nav-link scrollto" href="#speakers">Facilities</a></li>
                     <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li>
                     <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
                 </ul>
@@ -82,33 +83,6 @@
             </div>
         </section><!-- End About Section -->
 
-        <!-- ======= Speakers Section ======= -->
-        <section id="speakers">
-            <div class="container" data-aos="fade-up">
-                <div class="section-header">
-                    <h2>Facilities</h2>
-                    <p>Fasilitas lengkap dan bersih</p>
-                </div>
-
-                <div class="row">
-                    @foreach ($fasilitas as $f)
-                        <div class="col-lg-4 col-md-6 d-flex">
-                            <div class="speaker " data-aos="fade-up" data-aos-delay="100">
-                                <a href="{{ Storage::url('public/admin/' . $f->foto) }}" class="gallery-lightbox">
-                                <img src="{{ Storage::url('public/admin/' . $f->foto) }}" alt=""
-                                    class="img-fluid rounded"></a>
-                                <div class="details">
-                                    <h3 class=""><a href="">{{ $f->judul }}</a></h3>
-                                    <div class="social">
-                                        <p>{{ $f->deskripsi }}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-
-        </section><!-- End Speakers Section -->
 
         <!-- ======= Hotels Section ======= -->
         <section id="hotels" class="section-with-bg">
@@ -137,35 +111,111 @@
 
         </section><!-- End Hotels Section -->
 
-        <!-- GALLERY -->
+        <section id="buy-tickets" class="section-with-bg">
+            <div class="container" data-aos="fade-up">
 
+                <div class="section-header">
+                    <h2>Prestasi</h2>
+                    <p>Prestasi yang luar biasa</p>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title text-muted text-uppercase text-center">Premium Access</h5>
+                                <h6 class="card-price text-center">$350</h6>
+                                <hr>
+                                <ul class="fa-ul">
+                                    <li><span class="fa-li"><i class="fa fa-check"></i></span>Regular Seating</li>
+                                    <li><span class="fa-li"><i class="fa fa-check"></i></span>Coffee Break</li>
+                                    <li><span class="fa-li"><i class="fa fa-check"></i></span>Custom Badge</li>
+                                    <li><span class="fa-li"><i class="fa fa-check"></i></span>Community Access</li>
+                                    <li><span class="fa-li"><i class="fa fa-check"></i></span>Workshop Access</li>
+                                    <li><span class="fa-li"><i class="fa fa-check"></i></span>After Party</li>
+                                </ul>
+                                <hr>
+                                <div class="text-center">
+                                    <button type="button" class="btn" data-bs-toggle="modal"
+                                        data-bs-target="#buy-ticket-modal" data-ticket-type="premium-access">Buy
+                                        Now</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Modal Order Form -->
+            <div id="buy-ticket-modal" class="modal fade">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Buy Tickets</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form method="POST" action="#">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="your-name"
+                                        placeholder="Your Name">
+                                </div>
+                                <div class="form-group mt-3">
+                                    <input type="text" class="form-control" name="your-email"
+                                        placeholder="Your Email">
+                                </div>
+                                <div class="form-group mt-3">
+                                    <select id="ticket-type" name="ticket-type" class="form-select">
+                                        <option value="">-- Select Your Ticket Type --</option>
+                                        <option value="standard-access">Standard Access</option>
+                                        <option value="pro-access">Pro Access</option>
+                                        <option value="premium-access">Premium Access</option>
+                                    </select>
+                                </div>
+                                <div class="text-center mt-3">
+                                    <button type="submit" class="btn">Buy Now</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+
+        </section><!-- End Buy Ticket Section -->
+
+        <!-- ======= Speakers Section ======= -->
+        <section id="speakers">
+            <div class="container" data-aos="fade-up">
+                <div class="section-header">
+                    <h2>Facilities</h2>
+                    <p>Fasilitas lengkap dan bersih</p>
+                </div>
+
+                <div class="row">
+                    @foreach ($fasilitas as $f)
+                        <div class="col-lg-4 col-md-6 d-flex">
+                            <div class="speaker " data-aos="fade-up" data-aos-delay="100">
+                                <a href="{{ Storage::url('public/admin/' . $f->foto) }}" class="gallery-lightbox">
+                                    <img src="{{ Storage::url('public/admin/' . $f->foto) }}" alt=""
+                                        class="img-fluid rounded"></a>
+                                <div class="details">
+                                    <h3 class=""><a href="">{{ $f->judul }}</a></h3>
+                                    <div class="social">
+                                        <p>{{ $f->deskripsi }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+
+        </section><!-- End Speakers Section -->
 
         <!-- ======= Gallery Section ======= -->
         <section id="gallery">
-            {{-- <div class="section-header">
-                <h2>Gallery</h2>
-                <p>Check our gallery from the recent events</p>
-            </div>
-
-            @foreach ($galeri as $g)
-            <div id="gallery" class="gallery custom-padding mx-auto">
-                <div id="carouselGallery" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item ">
-                            <img class="gallery-img position-relative img-fluid rounded" src="{{ Storage::url('public/admin/' . $g->foto) }}"
-                                alt="">
-                        </div>
-
-                        <a class="carousel-control-prev" href="#carouselGallery" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselGallery" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            @endforeach --}}
             <div class="container" data-aos="fade-up">
                 <div class="section-header">
                     <h2>Gallery</h2>
@@ -173,35 +223,36 @@
                 </div>
             </div>
             <div class="gallery-slider swiper">
-                <h5 class="text-center">Photos</h5>
+                <h5 class="text-center mb-0">Photos</h5>
                 <div class="swiper-wrapper align-items-center">
                     @foreach ($galeri as $g)
                         <div class="swiper-slide">
                             <a href="{{ Storage::url('public/admin/' . $g->foto) }}" class="gallery-lightbox">
-                                <img src="{{ Storage::url('public/admin/' . $g->foto) }}" class="img-fluid"
+                                <img src="{{ Storage::url('public/admin/' . $g->foto) }}" class="img-fluid rounded"
                                     alt=""></a>
                             {{ $g->judul }}
                             <p>{{ $g->tanggal }}</p>
                         </div>
                     @endforeach
                 </div>
-                <div class="swiper-pagination"></div>
                 <div class="gallery-slider swiper">
-                    <h5 class="text-center">Videos</h5>
+                    <h5 class="text-center mt-3">Videos</h5>
                     <div class="swiper-wrapper align-items-center">
                         @foreach ($galeri as $g)
                             <div class="swiper-slide">
-                                    <a href="{{ Storage::url('public/admin/' . $g->video) }}" class="gallery-lightbox">
-                                        <video width="100%" height="auto" controls>
-                                            <source src="{{ Storage::url('public/admin/' . $g->video) }}" type="video/mp4">
-                                        </video></a>
+                                <a href="{{ Storage::url('public/admin/' . $g->video) }}" class="gallery-lightbox">
+                                    <video width="100%" height="auto" controls>
+                                        <source src="{{ Storage::url('public/admin/' . $g->video) }}"
+                                            type="video/mp4">
+                                    </video></a>
 
                                 {{ $g->judul }}
                                 <p>{{ $g->caption }}</p>
                             </div>
                         @endforeach
                     </div>
-            </div>
+                </div>
+                <div class="swiper-pagination"></div>
         </section><!-- End Gallery Section -->
 
         <!-- ======= Contact Section ======= -->
@@ -220,7 +271,10 @@
                             <div class="contact-address">
                                 <i class="bi bi-geo-alt"></i>
                                 <h3>Address</h3>
-                                <address>{{ $k->alamat }}</address>
+                                <address>
+                                    <a href="geo:0,0?q={{ urlencode($k->alamat) }}">{{ $k->alamat }}</a>
+                                </address>
+
                             </div>
                         </div>
 
@@ -228,7 +282,7 @@
                             <div class="contact-phone">
                                 <i class="bi bi-phone"></i>
                                 <h3>Phone Number</h3>
-                                <p><a href="#">{{ $k->notelp }}</a></p>
+                                <p><a href="tel:{{ $k->notelp }}">{{ $k->notelp }}</a></p>
                             </div>
                         </div>
 
@@ -236,7 +290,7 @@
                             <div class="contact-email">
                                 <i class="bi bi-envelope"></i>
                                 <h3>Email</h3>
-                                <p><a href="#">{{ $k->email }}</a></p>
+                                <p><a href="mailto:{{ $k->email }}">{{ $k->email }}</a></p>
                             </div>
                         </div>
                     @endforeach
@@ -263,10 +317,14 @@
                                             JL. KULIM UJUNG NO.88 <br>
                                             Tampan, Kec. Payung Sekaki <br>
                                             Kota Pekanbaru Prov. Riau <br>
-                                            <strong>Phone:</strong> {{ $k->notelp }}<br>
-                                            <strong>Email:</strong> {{ $k->email }}<br>
-                                            <strong>Facebook:</strong> {{ $k->facebook }}<br>
-                                            <strong>Instagram:</strong> {{ $k->instagram }}<br>
+                                            <i class="bi bi-phone"></i><a href="tel:{{ $k->notelp }}">
+                                                : {{ $k->notelp }}</a><br>
+                                            <i class="bi bi-envelope"></i><a href="mailto:{{ $k->email }}">
+                                                : {{ $k->email }}</a><br>
+                                            <i class="bi bi-facebook"></i><a href="https://www.facebook.com/{{ $k->facebook }}/" target="_blank">
+                                                : {{ $k->facebook }}</a><br>
+                                            <i class="bi bi-instagram"></i><a href="https://www.instagram.com/{{ $k->instagram }}/" target="_blank">
+                                                : {{ $k->instagram }}</a><br>
                                         </p>
                                     @endforeach
                                 </div>
