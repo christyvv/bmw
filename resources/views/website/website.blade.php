@@ -35,7 +35,7 @@
         <div class="container-fluid container-xxl d-flex align-items-center">
 
             <div id="logo" class="me-auto">
-                <a href="index.html" class="scrollto"><img style="margin-left: 100%"
+                <a href="#hero" class="scrollto"><img style="margin-left: 100%"
                         src="{{ url('web/assets/img/bmw.png') }}" alt="" title=""></a>
             </div>
 
@@ -124,11 +124,9 @@
                         <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
                             <div class="card mb-5 mb-lg-0">
                                 <div class="card-body">
-                                    <h5 class="card-title text-warning text-uppercase text-center">{{ $p->nama }}
-                                    </h5>
+
                                     <h6 class="card-price text-center">{{ $p->prestasi }}</h6>
-                                    <p class="card-date text-center"><i class="bi bi-calendar-event-fill">
-                                            {{ $p->tanggal }}</i></p>
+
                                     <hr>
                                     <div>
                                         <div class="row g-0">
@@ -137,16 +135,20 @@
                                                     alt="" class="img-fluid rounded-start">
                                             </div>
                                             <div class="col-md-8" style="margin: auto">
+                                                <h5 class="card-title text-dark text-uppercase">{{ $p->nama }}
+                                                </h5>
+                                                <p class="card-date"><i class="bi bi-calendar-event-fill">
+                                                    {{ $p->tanggal }}</i></p>
                                                 <p class="card-desc">{{ $p->deskripsi }}</p>
                                             </div>
                                         </div>
                                     </div>
-                                    <hr>
+                                    {{-- <hr>
                                     <div class="text-center mb-2">
                                         <button type="button" class="btn" data-bs-toggle="modal"
                                             data-bs-target="#buy-ticket-modal" data-ticket-type="premium-access">See
                                             More</button>
-                                    </div>
+                                    </div> --}}
 
                                 </div>
                             </div>
@@ -156,29 +158,29 @@
 
             </div>
 
-            <!-- Modal Order Form -->
+            {{-- <!-- Modal Order Form -->
             <div id="buy-ticket-modal" class="modal fade">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title">Prestasi</h4>
+                            <h4 class="modal-title" style="font-size: 14px; font-family:poppins; font-weight:500">Prestasi</h4>
                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                 aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form method="POST" action="#">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" name="your-name"
-                                        placeholder="Your Name">
-                                </div>
-                                <div class="text-center mt-3">
-                                    <button type="submit" class="btn">Buy Now</button>
-                                </div>
-                            </form>
+                            <div class="row g-0">
+                            <div class="col-md-4" style="margin: auto">
+                                <img src="{{ Storage::url('public/admin/' . $p->foto) }}"
+                                    alt="" class="img-fluid rounded">
+                            </div>
+                            <div class="col-md-8" style="margin: auto">
+                                <p class="card-desc">{{ $p->deskripsi }}</p>
+                            </div>
+                            </div>
                         </div>
                     </div><!-- /.modal-content -->
                 </div><!-- /.modal-dialog -->
-            </div><!-- /.modal -->
+            </div><!-- /.modal --> --}}
 
         </section><!-- End Buy Ticket Section -->
 

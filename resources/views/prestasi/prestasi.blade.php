@@ -10,8 +10,8 @@
     <div class="container-fluid">
         <h3 style="font-family: poppins; font-weight:400; font-size:20px"><strong>Halaman Prestasi</strong></h3>
         <a href="{{ route('prestasi.tambah') }}"><button type="submit" class="btn btn-primary mb-3 mt-0" style="font-family: poppins; font-weight:500;"><i class="fa fa-plus"></i> Tambah</button></a>
-        <table class="table table-success table-striped">
-            <thead class="">
+        <table class="table table-striped table-bordered">
+            <thead class="thead-dark">
                 <tr class="text-center" style="font-family: poppins">
                     <th style="font-size: 14px" scope="col">No</th>
                     <th style="font-size: 14px" scope="col">Nama</th>
